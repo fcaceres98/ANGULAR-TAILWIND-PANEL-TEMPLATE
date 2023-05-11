@@ -1,0 +1,33 @@
+<mat-toolbar color='primary'>
+    <mat-toolbar-row class="flex justify-between">
+        <button mat-button (click)="gotoInicio()" class="header-logo">
+            AVISYS
+        </button>
+        
+        <div class="">
+            <ul class="flex flex-row gap-4">
+                <li>
+                    <button mat-icon-button (click)="toogleSideBar()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="openMiPerfil()">
+                            <mat-icon>person</mat-icon>
+                            Mi Perfil
+                        </button>
+                        <mat-slide-toggle color="primary" [checked]="isChecked" (change)="changeThemeMode($event)">Dark Mode</mat-slide-toggle>
+                        <button mat-menu-item (click)="closeSesion()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Cerrar Sesion
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

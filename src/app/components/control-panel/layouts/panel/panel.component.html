@@ -1,0 +1,11 @@
+<app-spinner></app-spinner>
+<app-header (toogleSideBarMenu)="sideBarToogler($event)" (toogleThemeMode)="switchTheme($event)"></app-header>
+    <mat-drawer-container>
+        <mat-drawer #appDrawer mode='over' [opened]="sideBarOpen" (closed)="closeSideBar()">
+            <app-sidebar></app-sidebar>
+        </mat-drawer>
+        <mat-drawer-content>
+            <h1>panel works!</h1>
+        </mat-drawer-content>
+    </mat-drawer-container>
+<app-footer></app-footer>
